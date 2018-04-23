@@ -1,4 +1,4 @@
-hash = {    response: {
+data = {    response: {
             status: "ok",
             userTier: "developer",
             total: 9772,
@@ -101,6 +101,41 @@ hash = {    response: {
     }
 ]}
 }
-hash[:response][:results].each do |hash|
+
+data[:response][:results].each do |hash|
   hash[:views]=0
 end
+
+def read_articles(data)
+
+article_qty = data[:response][:results].size
+data[:response][:results][rand(article_qty)][:views] += 1
+
+end
+
+def display_views(data)
+
+
+  data[:response][:results].each do |hash|
+  p hash[:webTitle]
+  p hash[:views]
+  end
+end
+
+read_articles(data)
+read_articles(data)
+read_articles(data)
+read_articles(data)
+read_articles(data)
+read_articles(data)
+read_articles(data)
+read_articles(data)
+read_articles(data)
+read_articles(data)
+read_articles(data)
+read_articles(data)
+read_articles(data)
+read_articles(data)
+read_articles(data)
+
+display_views(data)
